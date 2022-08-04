@@ -1,4 +1,4 @@
-export function detectMoveDirection(prevX, prevY, nextX, nextY) {
+export function type1(prevX, prevY, nextX, nextY) {
   const toLeft = prevX - nextX > 0;
   const toRight = prevX - nextX < 0;
   const toTop = prevY - nextY > 0;
@@ -10,14 +10,14 @@ export function detectMoveDirection(prevX, prevY, nextX, nextY) {
   };
 }
 
-export function ugly(prevX, prevY, nextX, nextY) {
+export function type2(prevX, prevY, nextX, nextY) {
   return {
     horizontal: prevX - nextX > 0 ? 'left' : prevX - nextX < 0 ? 'right' : 'neutral',
     vertical: prevY - nextY > 0 ? 'top' : prevY - nextY < 0 ? 'bottom' : 'neutral',
   };
 }
 
-export function fool(prevX, prevY, nextX, nextY) {
+export function type3(prevX, prevY, nextX, nextY) {
   let horizontal = 'neutral';
   if (prevX - nextX > 0) {
     horizontal = 'left';
@@ -37,7 +37,7 @@ export function fool(prevX, prevY, nextX, nextY) {
   return { horizontal, vertical };
 }
 
-export function fool2(prevX, prevY, nextX, nextY) {
+export function type3_2(prevX, prevY, nextX, nextY) {
   let horizontal;
   if (prevX > nextX) {
     horizontal = 'left';
@@ -59,7 +59,7 @@ export function fool2(prevX, prevY, nextX, nextY) {
   return { horizontal, vertical };
 }
 
-export function fool3(prevX, prevY, nextX, nextY) {
+export function type3_3(prevX, prevY, nextX, nextY) {
   const horizontal = (() => {
     if (prevX > nextX) return 'left';
     if (prevX < nextX) return 'right';
